@@ -1,0 +1,44 @@
+def hitung_nilai_akhir():
+    print("=== Program Menghitung Nilai Akhir Akademik ===")
+
+    # Input nilai
+    sikap = float(input("Masukkan nilai Sikap/Kehadiran (0-100): "))
+    tugas = float(input("Masukkan nilai Tugas (0-100): "))
+    uts = float(input("Masukkan nilai UTS (0-100): "))
+    uas = float(input("Masukkan nilai UAS (0-100): "))
+
+    # Hitung total nilai akhir dengan bobot
+    total = (sikap * 0.10) + (tugas * 0.30) + (uts * 0.25) + (uas * 0.35)
+
+    # Tentukan nilai huruf dan bobot
+    if 81 <= total <= 100:
+        huruf, bobot = "A", 4
+    elif 76 <= total <= 80:
+        huruf, bobot = "B+", 3.5
+    elif 71 <= total <= 75:
+        huruf, bobot = "B", 3
+    elif 66 <= total <= 70:
+        huruf, bobot = "C+", 2.5
+    elif 56 <= total <= 65:
+        huruf, bobot = "C", 2
+    elif 46 <= total <= 55:
+        huruf, bobot = "D", 1
+    else:
+        huruf, bobot = "E", 0
+
+    # Keterangan Lulus/Tidak
+    if total >= 56:
+        keterangan = "Lulus"
+    else:
+        keterangan = "Tidak Lulus"
+
+    # Tampilkan hasil
+    print("\n=== Hasil Akhir ===")
+    print(f"Total Nilai Akhir : {total:.2f}")
+    print(f"Nilai Huruf       : {huruf}")
+    print(f"Bobot Nilai       : {bobot}")
+    print(f"Keterangan        : {keterangan}")
+
+
+if __name__ == "__main__":
+    hitung_nilai_akhir()
